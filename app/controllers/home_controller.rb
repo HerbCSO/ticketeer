@@ -9,7 +9,7 @@ class HomeController < ApplicationController
   def take_number
     @ticket = current_user.take_ticket
     if @ticket
-      flash[:success] = "Successfully took a ticket."
+      flash[:success] = "Successfully took ticket number #{@ticket.id}."
       redirect_to root_path
     else
       flash[:error] = "Can't take more than one ticket at a time!"

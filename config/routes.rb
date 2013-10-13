@@ -1,7 +1,7 @@
 TakeANumber::Application.routes.draw do
   root :to => "home#index"
 
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks"}
   get 'auth/failure', to: redirect('/')
   get '/auth/:provider/callback', to: 'sessions#create'
 
