@@ -1,4 +1,4 @@
-take-a-number
-=============
+Ticketeer
+=========
 
-Ticket taking system (like at the deli)
+Ticket taking system (like at the deli).

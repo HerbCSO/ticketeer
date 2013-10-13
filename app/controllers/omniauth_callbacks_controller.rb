@@ -1,6 +1,6 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def google_oauth2
-    if request.env['omniauth.auth'].extra.raw_info.email !~ /@opower.com\Z/
+    if request.env['omniauth.auth'].extra.raw_info.email !~ /(@opower.com|@dreesbach.org)\Z/
       flash[:error] = "Sorry, you're not allowed to sign into this application."
       redirect_to root_path
     else
