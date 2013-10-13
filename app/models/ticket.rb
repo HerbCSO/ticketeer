@@ -6,4 +6,5 @@ class Ticket < ActiveRecord::Base
   def now_serving?
 
   end
+
 end

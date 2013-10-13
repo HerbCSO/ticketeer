@@ -27,4 +27,8 @@ class User < ActiveRecord::Base
       @ticket.save
     end
   end
+
+  def is_admin?
+    self.admin
+  end
 end

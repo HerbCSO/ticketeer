@@ -8,7 +8,7 @@ ActiveAdmin.register_page "Dashboard" do
         panel "Recent Tickets" do
           ul do
             Ticket.recent(5).map do |ticket|
-              li link_to("#{ticket.id} - #{ticket.user.name}", admin_ticket_path(ticket))
+              li link_to("#{ticket.id} - #{ticket.user.name} (#{ticket.user.email})", admin_ticket_path(ticket))
             end
           end
         end
