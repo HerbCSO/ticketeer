@@ -1,7 +1,10 @@
-TakeANumber::Application.routes.draw do
+Ticketeer::Application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   root :to => "home#index"
 
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks"}
+  # ActiveAdmin.routes(self)
   get 'auth/failure', to: redirect('/')
   get '/auth/:provider/callback', to: 'sessions#create'
 

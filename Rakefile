@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-TakeANumber::Application.load_tasks
+Ticketeer::Application.load_tasks

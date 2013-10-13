@@ -1,3 +1,21 @@
+GIT
+  remote: git://github.com/gregbell/active_admin.git
+  revision: d1e2dbc1916732f5fc1dc6f6f7270ee23d7eff58
+  specs:
+    activeadmin (0.6.1)
+      arbre (~> 1.0)
+      bourbon
+      coffee-rails
+      devise (~> 3.0)
+      formtastic (~> 2.3.0.rc2)
+      inherited_resources (~> 1.3)
+      jquery-rails
+      jquery-ui-rails
+      kaminari (~> 0.13)
+      rails (>= 3.2, < 4.1)
+      ransack (~> 1.0)
+      sass-rails
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -25,6 +43,8 @@ GEM
       multi_json (~> 1.3)
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
+    arbre (1.0.1)
+      activesupport (>= 3.0.0)
     arel (4.0.0)
     atomic (1.1.14)
     awesome_print (1.1.0)
@@ -34,6 +54,9 @@ GEM
       erubis (>= 2.6.6)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bourbon (3.1.8)
+      sass (>= 3.2.0)
+      thor
     builder (3.1.4)
     callsite (0.0.11)
     coderay (1.0.9)
@@ -66,15 +89,23 @@ GEM
     execjs (2.0.2)
     faraday (0.8.8)
       multipart-post (~> 1.2.0)
+    formtastic (2.3.0.rc2)
+      actionpack (>= 3.0)
     grit (2.5.0)
       diff-lcs (~> 1.1)
       mime-types (~> 1.15)
       posix-spawn (~> 0.3.6)
+    has_scope (0.6.0.rc)
+      actionpack (>= 3.2, < 5)
+      activesupport (>= 3.2, < 5)
     hashie (2.0.5)
     hike (1.2.3)
     hirb (0.7.1)
     httpauth (0.2.0)
     i18n (0.6.5)
+    inherited_resources (1.4.1)
+      has_scope (~> 0.6.0.rc)
+      responders (~> 1.0.0.rc)
     jazz_hands (0.5.1)
       awesome_print (~> 1.1.0)
       coderay (~> 1.0.9)
@@ -94,9 +125,14 @@ GEM
     jquery-rails (3.0.4)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
+    jquery-ui-rails (4.0.5)
+      railties (>= 3.1.0)
     json (1.8.0)
     jwt (0.1.8)
       multi_json (>= 1.5)
+    kaminari (0.14.1)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     less (2.4.0)
       commonjs (~> 0.2.7)
     less-rails (2.4.2)
@@ -132,6 +168,8 @@ GEM
       omniauth (~> 1.0)
     orm_adapter (0.4.0)
     pg (0.17.0)
+    polyamorous (0.6.4)
+      activerecord (>= 3.0)
     polyglot (0.3.3)
     posix-spawn (0.3.6)
     pry (0.9.12.2)
@@ -180,9 +218,15 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (10.1.0)
+    ransack (1.0.0)
+      actionpack (>= 3.0)
+      activerecord (>= 3.0)
+      polyamorous (~> 0.6.0)
     rdoc (3.12.2)
       json (~> 1.4)
     ref (1.0.5)
+    responders (1.0.0)
+      railties (>= 3.2, < 5)
     sass (3.2.12)
     sass-rails (4.0.0)
       railties (>= 4.0.0.beta, < 5.0)
@@ -230,6 +274,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activeadmin!
   better_errors
   binding_of_caller
   coffee-rails (~> 4.0.0)
