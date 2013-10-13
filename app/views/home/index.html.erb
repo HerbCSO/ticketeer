@@ -1,0 +1,11 @@
+<h1>Take a number</h1>
+
+<p>Now serving: <%= now_serving? %>
+<%= "(That's you! ;] )" if serving_current_user? %>
+</p>
+
+<% if user_signed_in? %>
+  <%= link_to "Take a number", take_number_path %>
+<% else %>
+  <p>Sign in to take a number.</p>
+<% end %>

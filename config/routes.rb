@@ -1,4 +1,12 @@
 TakeANumber::Application.routes.draw do
+  root :to => "home#index"
+
+  devise_for :users
+  get 'auth/failure', to: redirect('/')
+  get '/auth/:provider/callback', to: 'sessions#create'
+
+  get 'take_number' => 'home#take_number', as: :take_number
+  get 'about' => 'home#about', as: :about
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -39,7 +47,7 @@ TakeANumber::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'

@@ -32,6 +32,18 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :development do
+  gem 'pry'
+  gem 'pry-rails'
+  gem 'better_errors'
+  gem 'jazz_hands'
+  gem 'binding_of_caller'
+  gem 'meta_request'
+end
+
+# For Heroku, see https://devcenter.heroku.com/articles/getting-started-with-rails4
+gem 'rails_12factor', group: :production
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -43,3 +55,10 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'omniauth-google-oauth2'
+gem 'devise', '~> 3.1.0'
+
+gem "therubyracer"
+gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+gem "twitter-bootstrap-rails"
