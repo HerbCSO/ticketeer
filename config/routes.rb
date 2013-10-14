@@ -9,6 +9,7 @@ Ticketeer::Application.routes.draw do
   get '/auth/:provider/callback', to: 'sessions#create'
 
   get 'take_number' => 'home#take_number', as: :take_number
+  get 'service_ticket' => 'home#service_ticket', as: :service_ticket
   get 'about' => 'home#about', as: :about
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

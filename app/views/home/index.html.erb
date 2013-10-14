@@ -5,7 +5,13 @@
 </p>
 
 <% if user_signed_in? %>
-  <%= link_to "Take a number", take_number_path %>
+  <p>Your ticket number: <%= my_ticket_number %></p>
+  <% if !ticket_in_queue? %>
+    <%= link_to "Take a number", take_number_path %>
+  <% end %>
+  <% if can_service_tickets? %>
+    <%= link_to "Service Ticket", service_ticket_path %>
+  <% end %>
 <% else %>
   <p>Sign in to take a number.</p>
 <% end %>
