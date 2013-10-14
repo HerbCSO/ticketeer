@@ -69,3 +69,4 @@ gem 'twitter-bootstrap-rails'
 gem 'activeadmin', github: 'gregbell/active_admin'
 
 gem 'rest-client'
+gem 'newrelic_rpm'
