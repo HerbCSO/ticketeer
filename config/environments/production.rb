@@ -19,8 +19,10 @@ Ticketeer::Application.configure do
   # For large-scale production use, consider using a caching reverse proxy like nginx, varnish or squid.
   # config.action_dispatch.rack_cache = true
 
-  # Disable Rails's static asset server (Apache or nginx will already do this).
-  config.serve_static_assets = false
+  # - Disable Rails's static asset server (Apache or nginx will already do this). -
+  # Apparently with Heroku we need to enable it after all - see
+  # http://blog.new-bamboo.co.uk/2013/07/18/deploying-rails-4-on-heroku
+  config.serve_static_assets = true
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
