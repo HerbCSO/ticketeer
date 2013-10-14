@@ -1,4 +1,4 @@
-[![Code Climate](https://codeclimate.com/github/HerbCSO/ticketeer.png)](https://codeclimate.com/github/HerbCSO/ticketeer)
+[![Code Climate](https://codeclimate.com/github/HerbCSO/ticketeer.png)](https://codeclimate.com/github/HerbCSO/ticketeer) [![Build Status](https://travis-ci.org/HerbCSO/ticketeer.png?branch=master)](https://travis-ci.org/HerbCSO/ticketeer)
 
 Ticketeer
 =========
