@@ -29,4 +29,11 @@ Ticketeer::Application.configure do
 
   # For devise
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+  # Add the fonts path as per http://stackoverflow.com/questions/10905905/using-fonts-with-rails-asset-pipeline
+  config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+  config.assets.paths << Rails.root.join('app', 'assets', 'fonts', 'digital-7')
+
+  # Precompile additional assets
+  config.assets.precompile += %w( .svg .eot .woff .ttf )
 end

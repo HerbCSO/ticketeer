@@ -52,21 +52,21 @@
               <!-- <li><%= link_to "Link1", take_number_path  %></li> -->
               <li><%= link_to "About", "/about"  %></li>
               <!-- <li><%= link_to "Link3", "/path3"  %></li> -->
-              <div class="span6 pull-right">
-                <% if user_signed_in? %>
-                  Logged in as <strong><%= current_user.email %></strong>.
-                  <!-- <%= link_to 'Edit profile', edit_user_registration_path %> | -->
-                  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-                <% else %>
-                <!--
-                  <%= link_to "Sign up", new_user_registration_path %> |
-                  <%= link_to "Login", new_user_session_path %> |
-                -->
-                  <%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2) %>
-                <% end %>
-              </div>
             </ul>
           </div><!--/.nav-collapse -->
+          <div class="span5 pull-right">
+            <% if user_signed_in? %>
+              Logged in as <strong><%= current_user.email %></strong>.
+              <!-- <%= link_to 'Edit profile', edit_user_registration_path %> | -->
+              <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+            <% else %>
+            <!--
+              <%= link_to "Sign up", new_user_registration_path %> |
+              <%= link_to "Login", new_user_session_path %> |
+            -->
+              <%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2) %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
@@ -90,9 +90,9 @@
         </div>
       </div><!--/row-->
 
-      <footer>
+      <div class="navbar navbar-fixed-bottom span12">
         <p>&copy; Carsten Dreesbach 2013</p>
-      </footer>
+      </div>
 
     </div> <!-- /container -->
 

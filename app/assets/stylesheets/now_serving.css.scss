@@ -1,0 +1,57 @@
+/*
+<div class="now-serving-frame">
+  <div class="now-serving-label">NOW SERVING</div>
+  <div class="now-serviing-number-container">
+    <div class="now-serving-number background">000</div>
+    <div class="now-serving-number background">XXX</div>
+    <div class="now-serving-number">
+      <% if now_serving? %>
+        <%= "%03d" % (now_serving? % 1000) %>
+      <% else %>
+        XXX
+      <% end %>
+    </div>
+  </div>
+  <div class="now-serving-footer"><%= "(That's you! ;] )" if serving_current_user? %></div>
+</div>
+*/
+.now-serving-frame {
+  background-color: #171515;
+  color: white;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  min-width: 140px;
+}
+.now-serving-label {
+  white-space: nowrap;
+}
+.now-serving-number-container {
+  position: relative;
+  padding-top: 20px;
+  display: flex;
+  height: 25pt;
+  text-align: center;
+  width: 100%;
+}
+.now-serving-number {
+  position: absolute;
+  font-family: 'digital-7_monoitalic';
+  font-size: 50pt;
+  color: red;
+  /*width: 220px;*/
+  text-shadow: 0 0 0.1em #F87;
+  left: 50%;
+  margin-left: -50px;
+}
+.background {
+  /*position: relative;*/
+  color: #433;
+  text-shadow: none;
+}
+.now-serving-footer {
+  white-space: nowrap;
+  padding-top: 0px;
+}

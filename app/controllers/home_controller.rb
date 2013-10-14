@@ -22,11 +22,7 @@ class HomeController < ApplicationController
 
   def now_serving?
     @ticket = Ticket.where(served_at: nil).order("created_at asc").first
-    if @ticket
-      @ticket.id
-    else
-      "None in queue"
-    end
+    @ticket.try(:id)
   end
 
   def serving_current_user?
@@ -55,7 +51,7 @@ class HomeController < ApplicationController
         ticket.user.notify_serving
         flash[:success] = "Now servicing ticket ##{ticket.id}."
       else
-        flash[:success] = "No tickets in service queue."
+        flash[:info] = "No tickets in service queue."
       end
       redirect_to root_path
     else
