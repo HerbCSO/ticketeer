@@ -1,3 +1,5 @@
+# see http://matthew.mceachen.us/blog/how-to-test-your-rails-application-with-travis-ci-on-different-databases-engines-1220.html
+# for sample setup
 language: ruby
 rvm:
   - "1.9.3"
@@ -7,5 +9,7 @@ rvm:
   - jruby-20mode # JRuby in 2.0 mode
   - rbx-19mode
   - rbx-20mode
-# uncomment this line if your project needs to run something other than `rake`:
-# script: bundle exec rspec spec
+before_script:
+  - psql -c 'create database ticketeer-test;' -U postgres
+script:
+  - RAILS_ENV=test bundle exec rake --trace db:migrate test
