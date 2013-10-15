@@ -3,7 +3,7 @@ class HomeController < ApplicationController
   helper :application
   helper_method :now_serving?, :serving_current_user?,
                 :my_ticket_number, :ticket_in_queue?, :can_service_tickets?,
-                :now_serving
+                :now_serving, :format_ticket_number
 
   def index
     @ticket = Ticket.where(served_at: nil).order("created_at asc").first
@@ -12,7 +12,7 @@ class HomeController < ApplicationController
   def take_number
     @ticket = current_user.take_ticket
     if @ticket
-      flash[:success] = "Successfully took ticket number #{@ticket.id}."
+      flash[:success] = "Successfully took ticket number #{format_ticket_number(@ticket.id)}."
       redirect_to root_path
       return
     else
@@ -55,7 +55,7 @@ class HomeController < ApplicationController
         ticket.served_at = DateTime.now
         ticket.save
         ticket.user.notify_serving
-        flash[:success] = "Now servicing ticket ##{ticket.id}."
+        flash[:success] = "Now servicing ticket #{format_ticket_number(ticket.id)}."
       else
         flash[:info] = "No tickets in service queue."
       end

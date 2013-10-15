@@ -7,6 +7,14 @@ class ApplicationController < ActionController::Base
     raise SecurityError, "Sorry, you're not an admin user!" unless current_user.try(:is_admin?)
   end
 
+  def format_ticket_number(number)
+    if number && number.to_i
+      "%03d" % (number % 1000)
+    else
+      "XXX"
+    end
+  end
+
   rescue_from SecurityError do |exception|
     flash[:error] = exception.message
     redirect_to root_url
