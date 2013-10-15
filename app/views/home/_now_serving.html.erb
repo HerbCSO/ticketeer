@@ -1,0 +1,17 @@
+<div class="now-serving-frame clearfix span3">
+  <div class="now-serving-label">NOW SERVING</div>
+  <div class="now-serving-number-container">
+    <div class="now-serving-number background">000</div>
+    <div class="now-serving-number background">XXX</div>
+    <div class="now-serving-number">
+      <%= format_ticket_number(now_serving?) %>
+    </div>
+  </div>
+  <div class="now-serving-footer">
+    <% if serving_current_user? %>
+      <%= "(That's you! ;] )" %>
+    <% else %>
+      <%= now_serving %>
+    <% end %>
+  </div>
+</div>

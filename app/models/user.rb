@@ -64,9 +64,9 @@ class User < ActiveRecord::Base
       RestClient.post API_URL+"/messages",
           :from => "notifications@ticketeer.herokuapp.com",
           :to => self.email,
-          :subject => "Now serving your ticket",
-          :text => "You have 3 minutes to reply!",
-          :html => "You have <b>3 minutes</b> to reply!"
+          :subject => "Now serving your ticket at Carsten's Office Hours",
+          :text => "Hurry up!\nYou have 5 minutes to reply!",
+          :html => "<h1>Hurry up!</h1>\nYou have <b>5 minutes</b> to reply!"
     end
   end
 end

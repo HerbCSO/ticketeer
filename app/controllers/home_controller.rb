@@ -1,7 +1,9 @@
 class HomeController < ApplicationController
   before_filter :authenticate_user!, except: [:index, :show]
+  helper :application
   helper_method :now_serving?, :serving_current_user?,
-                :my_ticket_number, :ticket_in_queue?, :can_service_tickets?
+                :my_ticket_number, :ticket_in_queue?, :can_service_tickets?,
+                :now_serving
 
   def index
     @ticket = Ticket.where(served_at: nil).order("created_at asc").first
@@ -21,13 +23,17 @@ class HomeController < ApplicationController
   end
 
   def now_serving?
-    @ticket = Ticket.where(served_at: nil).order("created_at asc").first
+    @ticket = Ticket.next_open.first
     @ticket.try(:id)
   end
 
   def serving_current_user?
-    @ticket = Ticket.where(served_at: nil).order("created_at asc").first
+    @ticket = Ticket.next_open.first
     @ticket && current_user && @ticket.user_id == current_user.id
+  end
+
+  def now_serving
+    Ticket.next_open.try(:first).try(:user).try(:name) || 'Nobody'
   end
 
   def my_ticket_number

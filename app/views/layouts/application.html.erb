@@ -51,6 +51,9 @@
             <ul class="nav">
               <!-- <li><%= link_to "Link1", take_number_path  %></li> -->
               <li><%= link_to "About", "/about"  %></li>
+              <% if is_admin? %>
+              <li><%= link_to "Admin", :admin_root, :'data-no-turbolink' => true %></li>
+              <% end %>
               <!-- <li><%= link_to "Link3", "/path3"  %></li> -->
             </ul>
           </div><!--/.nav-collapse -->

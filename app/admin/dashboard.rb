@@ -5,9 +5,9 @@ ActiveAdmin.register_page "Dashboard" do
   content :title => proc{ I18n.t("active_admin.dashboard") } do
     columns do
       column do
-        panel "Recent Tickets" do
+        panel "Recent Active Tickets" do
           ul do
-            Ticket.recent(5).map do |ticket|
+            Ticket.recent(50).map do |ticket|
               li link_to("#{ticket.id} - #{ticket.user.name} (#{ticket.user.email})", admin_ticket_path(ticket))
             end
           end

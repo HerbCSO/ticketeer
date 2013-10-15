@@ -1,6 +1,5 @@
-
-<div class="span6">
-  <% if user_signed_in? %>
+<% if user_signed_in? %>
+  <div class="span6">
     <p>Your ticket number: <%= my_ticket_number %></p>
     <% if !ticket_in_queue? %>
       <%= link_to '<span class="glyphicon glyphicon-hand-up"></span> Take a number'.html_safe, take_number_path, :class => "btn btn-primary btn-lg" %>
@@ -8,23 +7,8 @@
     <% if can_service_tickets? && Ticket.next_open.first %>
       <%= link_to '<span class="glyphicon glyphicon-user"></span> Service Ticket'.html_safe, service_ticket_path, :class => "btn btn-warning btn-lg" %>
     <% end %>
-  <% else %>
-    <p>Sign in to take a number.</p>
-  <% end %>
-</div>
-
-<div class="now-serving-frame clearfix span3">
-  <div class="now-serving-label">NOW SERVING</div>
-  <div class="now-serving-number-container">
-    <div class="now-serving-number background">000</div>
-    <div class="now-serving-number background">XXX</div>
-    <div class="now-serving-number">
-      <% if now_serving? %>
-        <%= "%03d" % (now_serving? % 1000) %>
-      <% else %>
-        XXX
-      <% end %>
-    </div>
   </div>
-  <div class="now-serving-footer"><%= "(That's you! ;] )" if serving_current_user? %></div>
-</div>
+  <%= render "now_serving" %>
+<% else %>
+  <%= link_to 'Sign in to take a number', user_omniauth_authorize_path(:google_oauth2), :class => "btn btn-default btn-lg" %>
+<% end %>
