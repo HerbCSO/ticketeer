@@ -2,6 +2,7 @@ require 'rest_client'
 
 class User < ActiveRecord::Base
   has_many :tickets, dependent: :destroy
+  validates_inclusion_of :time_zone, in: ActiveSupport::TimeZone.zones_map(&:name)
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -11,6 +12,7 @@ class User < ActiveRecord::Base
 
   API_KEY = ENV['MAILGUN_API_KEY']
   API_URL = "https://api:#{API_KEY}@api.mailgun.net/v2/ticketeer.herokuapp.com"
+
 
   def self.find_for_google_oauth2(access_token, signed_in_resource=nil)
     data = access_token.info

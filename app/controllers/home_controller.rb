@@ -52,7 +52,7 @@ class HomeController < ApplicationController
     if current_user.can_service_tickets?
       ticket = Ticket.where(served_at: nil).order(:created_at).first
       if ticket
-        ticket.served_at = DateTime.now
+        ticket.served_at = Time.zone.now
         ticket.save
         ticket.user.notify_serving
         flash[:success] = "Now servicing ticket #{format_ticket_number(ticket.id)}."

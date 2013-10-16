@@ -1,7 +1,7 @@
 Ticketeer::Application.routes.draw do
   root :to => "home#index"
 
-  devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks"}
+  devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks", :registrations => "registrations"}
   ActiveAdmin.routes(self)
 
   get 'auth/failure', to: redirect('/')
