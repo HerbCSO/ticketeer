@@ -2,6 +2,7 @@ require 'rest_client'
 
 class User < ActiveRecord::Base
   has_many :tickets, dependent: :destroy
+
   validates_inclusion_of :time_zone, in: ActiveSupport::TimeZone.zones_map(&:name)
 
   # Include default devise modules. Others available are:

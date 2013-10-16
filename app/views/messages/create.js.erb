@@ -1,0 +1,4 @@
+$("#chat").append("<%= j render(@message) %>");
+$("#chat").append("<%= j render(@reply) %>");
+$("#new_message")[0].reset();
+$("#chat").scrollTop($("#chat")[0].scrollHeight);
