@@ -44,6 +44,10 @@ group :development do
   gem 'meta_request'
 end
 
+group :development, :test do
+  gem 'rspec-rails', '~> 2.0'
+end
+
 # For Heroku, see https://devcenter.heroku.com/articles/getting-started-with-rails4
 gem 'rails_12factor', group: :production
 
@@ -70,3 +74,5 @@ gem 'activeadmin', github: 'gregbell/active_admin'
 
 gem 'rest-client'
 gem 'newrelic_rpm'
+
+gem 'coveralls', require: false
