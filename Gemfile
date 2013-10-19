@@ -76,3 +76,5 @@ gem 'rest-client'
 gem 'newrelic_rpm'
 
 gem 'coveralls', require: false
+gem 'intercom-rails'
+gem 'bugsnag'

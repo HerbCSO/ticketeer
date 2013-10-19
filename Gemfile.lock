@@ -57,6 +57,9 @@ GEM
     bourbon (3.1.8)
       sass (>= 3.2.0)
       thor
+    bugsnag (1.6.2)
+      httparty (>= 0.6, < 1.0)
+      multi_json (~> 1.0)
     builder (3.1.4)
     callsite (0.0.11)
     coderay (1.0.9)
@@ -107,11 +110,16 @@ GEM
     hashie (2.0.5)
     hike (1.2.3)
     hirb (0.7.1)
+    httparty (0.12.0)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     httpauth (0.2.0)
     i18n (0.6.5)
     inherited_resources (1.4.1)
       has_scope (~> 0.6.0.rc)
       responders (~> 1.0.0.rc)
+    intercom-rails (0.2.24)
+      activesupport (> 3.0)
     jazz_hands (0.5.1)
       awesome_print (~> 1.1.0)
       coderay (~> 1.0.9)
@@ -156,6 +164,7 @@ GEM
     mime-types (1.25)
     minitest (4.7.5)
     multi_json (1.8.1)
+    multi_xml (0.5.5)
     multipart-post (1.2.0)
     newrelic_rpm (3.6.8.164)
     oauth2 (0.8.1)
@@ -304,9 +313,11 @@ DEPENDENCIES
   activeadmin!
   better_errors
   binding_of_caller
+  bugsnag
   coffee-rails (~> 4.0.0)
   coveralls
   devise (~> 3.1.0)
+  intercom-rails
   jazz_hands
   jbuilder (~> 1.2)
   jquery-rails
