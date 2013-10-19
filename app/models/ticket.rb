@@ -20,7 +20,7 @@ class Ticket < ActiveRecord::Base
     tickets = tickets.group("date(served_at)")
     tickets.each_with_object({}) do |ticket, counts|
       logger.info "ticket.served_at: #{ticket.served_at}"
-      counts[ticket.served_at] = 1
+      counts[ticket.served_at] = ticket.total_count
     end
   end
 end
