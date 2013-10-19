@@ -8,3 +8,4 @@ jQuery ->
     xkey: 'served_at'
     ykeys: ['count']
     labels: ['Count']
+    smooth: false
