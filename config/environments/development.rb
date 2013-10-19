@@ -36,4 +36,6 @@ Ticketeer::Application.configure do
 
   # Precompile additional assets
   config.assets.precompile += %w( .svg .eot .woff .ttf )
+
+  config.log_level = :debug
 end

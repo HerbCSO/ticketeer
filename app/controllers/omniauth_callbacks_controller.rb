@@ -10,6 +10,8 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
         flash[:notice] = I18n.t "devise.omniauth_callbacks.success", :kind => "Google"
         sign_in_and_redirect @user, :event => :authentication
       else
+        flash[:error] = "Sorry, we encountered a problem and could not log you in."
+        logger.error "Error when trying to create user #{@user.email}: #{@user.errors.messages}"
         session["devise.google_data"] = request.env["omniauth.auth"]
         redirect_to root_path
       end
