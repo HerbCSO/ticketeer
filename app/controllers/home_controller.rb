@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  before_filter :authenticate_user!, except: [:index, :show]
+  before_filter :authenticate_user!, except: [:index, :show, :about]
   helper :application
   helper_method :now_serving?, :serving_current_user?,
                 :my_ticket_number, :ticket_in_queue?, :can_service_tickets?,

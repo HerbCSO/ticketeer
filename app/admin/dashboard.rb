@@ -3,6 +3,11 @@ ActiveAdmin.register_page "Dashboard" do
   menu :priority => 1, :label => proc{ I18n.t("active_admin.dashboard") }
 
   content :title => proc{ I18n.t("active_admin.dashboard") } do
+
+    within @head do
+      script :src => javascript_path('tickets.js'), :type => "text/javascript"
+    end
+
     columns do
       column do
         panel "Recent Active Tickets" do
