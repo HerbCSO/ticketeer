@@ -16,7 +16,10 @@ ActiveAdmin.register_page "Dashboard" do
 
       column do
         panel "Info" do
-          para "Welcome to ActiveAdmin."
+          para "Tickets served per day, last 30 days."
+          # content_tag :div, "", id: "tickets_chart", data: {tickets: Ticket.chart_data}
+          logger.info Ticket.chart_data
+          div id: "tickets_chart", "data-tickets" => Ticket.chart_data.to_json
         end
       end
     end
