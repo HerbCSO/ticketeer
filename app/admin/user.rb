@@ -18,6 +18,7 @@ ActiveAdmin.register User do
   end
 
   index do
+    selectable_column
     column :id
     column :name
     column :email
@@ -25,4 +26,5 @@ ActiveAdmin.register User do
     column :servicer
     default_actions
   end
+
 end
