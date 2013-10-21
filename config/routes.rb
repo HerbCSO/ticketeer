@@ -1,8 +1,14 @@
 Ticketeer::Application.routes.draw do
   root :to => "home#index"
 
-  devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks", :registrations => "registrations"}
+  devise_for :users,
+    :controllers => { :omniauth_callbacks => "omniauth_callbacks", :registrations => "registrations"},
+    :except => [ :create, :new ]
   ActiveAdmin.routes(self)
+
+  get 'users/edit', to: 'users#edit', as: :edit_profile
+  get 'users/edit', to: 'users#edit', as: :user
+  patch 'users/edit', to: 'users#update'
 
   get 'auth/failure', to: redirect('/')
   get '/auth/:provider/callback', to: 'sessions#create'

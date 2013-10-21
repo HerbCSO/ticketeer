@@ -7,15 +7,11 @@ class User < ActiveRecord::Base
   # to include a time zone in the create call
   # validates_inclusion_of :time_zone, in: ActiveSupport::TimeZone.zones_map(&:name)
 
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
+  # Include most default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, #registerable and :omniauthable
+  devise :database_authenticatable
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:google_oauth2]
-
-  API_KEY = ENV['MAILGUN_API_KEY']
-  API_URL = "https://api:#{API_KEY}@api.mailgun.net/v2/ticketeer.herokuapp.com"
-
 
   def self.find_for_google_oauth2(access_token, signed_in_resource=nil)
     data = access_token.info
@@ -74,7 +70,7 @@ class User < ActiveRecord::Base
 
   def send_email
     if Rails.env.production?
-      RestClient.post API_URL+"/messages",
+      RestClient.post MAILGUN_API_URL+"/messages",
           :from => "notifications@ticketeer.herokuapp.com",
           :to => self.email,
           :subject => "Now serving your ticket at Carsten's Office Hours",

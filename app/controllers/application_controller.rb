@@ -7,6 +7,9 @@ class ApplicationController < ActionController::Base
 
   around_filter :user_time_zone, if: :current_user
 
+  MAILGUN_API_KEY = ENV['MAILGUN_API_KEY']
+  MAILGUN_API_URL = "https://api:#{MAILGUN_API_KEY}@api.mailgun.net/v2/ticketeer.herokuapp.com"
+
   def authenticate_admin_user!
     raise SecurityError, "Sorry, you're not an admin user!" unless current_user.try(:is_admin?)
   end
