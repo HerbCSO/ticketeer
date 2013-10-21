@@ -5,6 +5,6 @@
 </ul>
 
 <%= form_for Message.new, remote: true do |f| %>
-  <%= f.text_field :content %>
+  <%= f.text_field :content, :autofocus => true %>
   <%= f.submit "Send" %>
 <% end %>

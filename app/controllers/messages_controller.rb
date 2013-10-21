@@ -24,6 +24,7 @@ private
   end
 
   def generate_reply(message_input)
+    Random.new
     message = message_input.downcase
     bad_clients = ["ngma","cms","tru"]
     probably_no = ["is it possible to","do you think we can","the client asked if we could","is it feasible to","can we","should we","can i","should i"]

@@ -1,7 +1,9 @@
 <% if user_signed_in? %>
   <div class="span6">
     <p>Your ticket number: <%= my_ticket_number %></p>
-    <% if !ticket_in_queue? %>
+    <% if ticket_in_queue? %>
+      <%= link_to '<span class="glyphicon glyphicon-cancel"></span> Cancel Ticket'.html_safe, cancel_ticket_path, :class => "btn btn-lg" %>
+    <% else %>
       <%= link_to '<span class="glyphicon glyphicon-hand-up"></span> Take a number'.html_safe, take_number_path, :class => "btn btn-primary btn-lg" %>
     <% end %>
     <% if can_service_tickets? && Ticket.next_open.first %>

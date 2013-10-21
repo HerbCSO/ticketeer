@@ -22,6 +22,16 @@ class HomeController < ApplicationController
     end
   end
 
+  def cancel_ticket
+    @ticket = Ticket.find(current_user.current_ticket)
+    if @ticket.try(:destroy)
+      flash[:success] = "Ticket removed, thanks for maintaining the queue! ;]"
+    else
+      flash[:error] = "Sorry, something went wrong and we couldn't remove your ticket."
+    end
+    redirect_to root_path
+  end
+
   def now_serving?
     @ticket = Ticket.next_open.first
     @ticket.try(:id)
