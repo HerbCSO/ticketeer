@@ -70,7 +70,7 @@ class User < ActiveRecord::Base
 
   def send_email
     if Rails.env.production?
-      RestClient.post MAILGUN_API_URL+"/messages",
+      RestClient.post ApplicationController::MAILGUN_API_URL+"/messages",
           :from => "notifications@ticketeer.herokuapp.com",
           :to => self.email,
           :subject => "Now serving your ticket at Carsten's Office Hours",
