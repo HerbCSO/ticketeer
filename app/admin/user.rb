@@ -13,7 +13,7 @@ ActiveAdmin.register User do
 
   controller do
     def permitted_params
-      params.permit(:user => [:name, :email, :admin, :servicer])
+      params.permit(:user => [:name, :email, :time_zone, :admin, :servicer])
     end
   end
 
@@ -22,6 +22,7 @@ ActiveAdmin.register User do
     column :id
     column :name
     column :email
+    column :time_zone
     column :admin
     column :servicer
     default_actions
