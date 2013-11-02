@@ -46,6 +46,8 @@ GEM
     airbrake (3.1.14)
       builder
       json
+    annotate (2.5.0)
+      rake
     arbre (1.0.1)
       activesupport (>= 3.0.0)
     arel (4.0.0)
@@ -315,6 +317,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin!
   airbrake
+  annotate (>= 2.5.0)
   better_errors
   binding_of_caller
   bugsnag
