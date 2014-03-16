@@ -42,7 +42,7 @@ group :development do
   gem 'jazz_hands'
   gem 'binding_of_caller'
   gem 'meta_request'
-  gem 'annotate', "~> 2.5.0"
+  gem 'annotate', "~> 2.5"
 end
 
 group :development, :test do
