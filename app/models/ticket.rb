@@ -8,6 +8,10 @@
 #  created_at :datetime
 #  updated_at :datetime
 #
+# Indexes
+#
+#  index_tickets_on_user_id  (user_id)
+#
 
 class Ticket < ActiveRecord::Base
   belongs_to :user
