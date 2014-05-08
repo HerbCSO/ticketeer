@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # For Heroku - see https://devcenter.heroku.com/articles/getting-started-with-rails4
-ruby "2.0.0"
+ruby "2.1.1"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 4.0.2'
