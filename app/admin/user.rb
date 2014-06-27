@@ -25,7 +25,7 @@ ActiveAdmin.register User do
     column :time_zone
     column :admin
     column :servicer
-    default_actions
+    actions
   end
 
 end

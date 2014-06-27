@@ -18,7 +18,7 @@ ActiveAdmin.register Ticket do
     column "Comments" do |ticket|
       ActiveAdmin::Comment.find_by(resource_type: ticket.class, resource_id: ticket.id.to_s).try(:body)
     end
-    default_actions
+    actions
   end
 
   controller do
