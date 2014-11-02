@@ -16,7 +16,7 @@ gem 'sass-rails', '~> 4.0'
 gem 'uglifier', '~> 2.0'
 
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-rails', '~> 4.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -45,7 +45,7 @@ group :development do
 end
 
 group :development, :test do
-  gem 'rspec-rails', '~> 2.0'
+  gem 'rspec-rails', '~> 3.0'
 end
 
 # For Heroku, see https://devcenter.heroku.com/articles/getting-started-with-rails4
