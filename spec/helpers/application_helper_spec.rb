@@ -10,6 +10,6 @@ require 'spec_helper'
 #     end
 #   end
 # end
-describe ApplicationHelper do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe ApplicationHelper, :type => :helper do
+  skip "add some examples to (or delete) #{__FILE__}"
 end

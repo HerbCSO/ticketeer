@@ -1,5 +1,5 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe RegistrationsController do
+describe RegistrationsController, :type => :controller do
 
 end

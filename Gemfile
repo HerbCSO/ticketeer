@@ -1,16 +1,16 @@
 source 'https://rubygems.org'
 
 # For Heroku - see https://devcenter.heroku.com/articles/getting-started-with-rails4
-ruby "2.0.0"
+ruby '2.1.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 4.0.2'
+gem 'rails', '~> 4.1.0'
 
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
+gem 'sass-rails', '~> 4.0'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '~> 2.0'
@@ -39,10 +39,9 @@ group :development do
   gem 'pry'
   gem 'pry-rails'
   gem 'better_errors'
-  gem 'jazz_hands'
   gem 'binding_of_caller'
   gem 'meta_request'
-  gem 'annotate', "~> 2.5"
+  gem 'annotate', '~> 2.5'
 end
 
 group :development, :test do
@@ -64,21 +63,21 @@ gem 'rails_12factor', group: :production
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'omniauth-google-oauth2'
+gem 'omniauth-google-oauth2', '~> 0.2'
 gem 'devise', '~> 3.2'
 
 group :assets do
   gem 'therubyracer', :platforms => :ruby
 end
 gem 'less-rails' #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
-gem 'twitter-bootstrap-rails'
+gem 'twitter-bootstrap-rails', '~> 2.2'
 
 gem 'activeadmin', github: 'gregbell/active_admin'
 
-gem 'rest-client'
-gem 'newrelic_rpm'
+gem 'rest-client', '~> 1.7'
+gem 'newrelic_rpm', '~> 3.9'
 
-gem 'coveralls', require: false
-gem 'intercom-rails'
-gem 'bugsnag'
-gem 'airbrake'
+gem 'coveralls', '~> 0.7', require: false
+gem 'intercom-rails', '~> 0.2'
+gem 'bugsnag', '~> 2.5'
+gem 'airbrake', '~> 4.0'
