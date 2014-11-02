@@ -23,7 +23,7 @@ ActiveAdmin.register Ticket do
 
   controller do
     def permitted_params
-      params.permit(:ticket => [:served_at])
+      params.permit(:ticket => [:user_id, :served_at])
     end
   end
 

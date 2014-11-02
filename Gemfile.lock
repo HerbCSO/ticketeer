@@ -303,7 +303,7 @@ DEPENDENCIES
   pg
   pry
   pry-rails
-  rails (~> 4.1.0)
+  rails (~> 4.1)
   rails_12factor
   rest-client (~> 1.7)
   rspec-rails (~> 2.0)
