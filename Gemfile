@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # For Heroku - see https://devcenter.heroku.com/articles/getting-started-with-rails4
-ruby "2.1.1"
+ruby "2.1.3"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 4.1'
@@ -38,8 +38,8 @@ end
 group :development do
   gem 'pry'
   gem 'pry-rails'
+  gem 'pry-byebug'
   gem 'better_errors'
-  gem 'jazz_hands'
   gem 'binding_of_caller'
   gem 'meta_request'
   gem 'annotate', "~> 2.5"
@@ -71,7 +71,7 @@ group :assets do
   gem 'therubyracer', :platforms => :ruby
 end
 gem 'less-rails' #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
-gem 'twitter-bootstrap-rails'
+gem 'twitter-bootstrap-rails', '~> 2.0'
 
 gem 'activeadmin', github: 'gregbell/active_admin'
 

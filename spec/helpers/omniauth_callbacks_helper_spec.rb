@@ -10,6 +10,6 @@ require 'spec_helper'
 #     end
 #   end
 # end
-describe OmniauthCallbacksHelper do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe OmniauthCallbacksHelper, :type => :helper do
+  skip "add some examples to (or delete) #{__FILE__}"
 end

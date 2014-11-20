@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe OmniauthCallbacksController do
+describe OmniauthCallbacksController, :type => :controller do
 
 end

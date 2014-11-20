@@ -1,10 +1,10 @@
 require "spec_helper"
 
-describe UsersController do
+describe UsersController, :type => :routing do
   describe "routing" do
 
     it "routes to #edit" do
-      get("/users/edit").should route_to("users#edit")
+      expect(get("/users/edit")).to route_to("users#edit")
     end
 
   end
