@@ -82,3 +82,4 @@ gem 'coveralls', '~> 0.7', require: false
 gem 'intercom-rails', '~> 0.2'
 gem 'bugsnag', '~> 2.5'
 gem 'airbrake', '~> 4.0'
+gem 'sentry-raven', '~> 0.12', '>= 0.12.2'

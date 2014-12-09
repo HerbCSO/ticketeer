@@ -251,6 +251,8 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    sentry-raven (0.12.2)
+      faraday (>= 0.7.6)
     simplecov (0.9.1)
       docile (~> 1.1.0)
       multi_json (~> 1.0)
@@ -320,6 +322,7 @@ DEPENDENCIES
   rspec-rails (~> 3.0)
   sass-rails (~> 4.0)
   sdoc
+  sentry-raven (~> 0.12, >= 0.12.2)
   therubyracer
   turbolinks
   twitter-bootstrap-rails (~> 2.2)
