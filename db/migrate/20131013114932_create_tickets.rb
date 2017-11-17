@@ -4,7 +4,8 @@ class CreateTickets < ActiveRecord::Migration
       t.references :user, index: true
       t.datetime :served_at
 
-      t.timestamps
+      t.timestamps null: true
+
     end
   end
 end
