@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
 # For Heroku - see https://devcenter.heroku.com/articles/getting-started-with-rails4
-ruby '2.1.4'
+ruby '2.4.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 4.1'
+gem 'rails', '~> 4.2'
 
 # Use sqlite3 as the database for Active Record
 gem 'pg'
@@ -70,10 +70,10 @@ gem 'devise', '~> 3.2'
 group :assets do
   gem 'therubyracer', :platforms => :ruby
 end
-gem 'less-rails' #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+gem 'less-rails', '~> 2.8' #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem 'twitter-bootstrap-rails', '~> 2.2'
 
-gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'activeadmin', '~> 1.0'
 
 gem 'rest-client', '~> 1.7'
 gem 'newrelic_rpm', '~> 3.9'
